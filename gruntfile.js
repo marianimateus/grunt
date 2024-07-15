@@ -55,6 +55,10 @@ module.exports = function(grunt) {
                         {
                             match: 'ENDERECO_DO_CSS',
                             replacement: './styles/style.min.css'
+                        },
+                        {
+                            match: 'ENDERECO_DO_JS',
+                            replacement: './scripts/main.min.js'
                         }
                     ]
                 },
@@ -79,8 +83,17 @@ module.exports = function(grunt) {
                 }
             }
         },
-        clean: ['prebuild']
+        clean: ['prebuild'],
+        uglify: {
+            target: {
+                files: {
+                    'dist/scripts/main.min.js': 'source/scripts/main.js'
+                }
+            }
+        }
     })
+
+    grunt.loadNpmTasks('grunt-contrib-uglify'); // minifica o arquivo .js
 
     grunt.loadNpmTasks('grunt-contrib-clean'); // exclui uma pasta específica
 
@@ -94,6 +107,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['watch']); // tarefa padrao para fazer a observação de mudanças no codigo less e html
 
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 
 }
