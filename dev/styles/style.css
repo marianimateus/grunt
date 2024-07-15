@@ -1,5 +1,5 @@
 body {
-  background-color: #eb3b5a;
+  background-color: #960b25f4;
   font-family: Roboto, sans-serif;
   color: #fff;
 }
@@ -9,7 +9,7 @@ h1 {
   font-weight: 100;
 }
 main {
-  max-width: 960px;
+  max-width: 760px;
   width: 100%;
   margin: 0 auto;
   font-size: 2em;
@@ -21,8 +21,8 @@ button {
   font-weight: bold;
   font-size: 1.3em;
   margin-top: 160x;
-  border-radius: 8px;
-  background-color: #f7b731;
+  border-radius: 16px;
+  background-color: #ffae00;
   color: #000;
   font-family: Roboto, sans-serif;
 }
@@ -36,4 +36,20 @@ input {
   text-align: center;
   color: #fff;
   border-bottom: 6px solid #fff;
+}
+.resultado {
+  padding: 16px;
+  margin-top: 120px;
+  border: 8px ridge #fff;
+  display: none;
+}
+.resultado span {
+  font-weight: bold;
+  font-size: 3em;
+  display: block;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

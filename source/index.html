@@ -15,10 +15,13 @@
         <form id="form-sorteador">
             <div>
                 <label for="numero-maximo">Número maximo</label>
-                <input type="number" name="" id="numero-maximo">
+                <input type="number" name="" id="numero-maximo" required min="2" value="2" step="1">
             </div>
             <button type="submit">Sortear número</button>
         </form>
+        <div class="resultado">
+            O número sorteado foi: <span id="resultado-valor"></span>
+        </div>
     </main>
     <script src="@@ENDERECO_DO_JS"></script>
 </body>
